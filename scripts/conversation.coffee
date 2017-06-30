@@ -31,4 +31,7 @@ module.exports = (robot) ->
   robot.hear /joke/i, (res) ->
     robot.http("https://icanhazdadjoke.com/")
     .get() (err, res, body) ->
-      res.send {body}
+      if err
+        res.send "Desolé j\'ai eu un petit problème :( #{err}"
+        return
+      res.send "{body}"
