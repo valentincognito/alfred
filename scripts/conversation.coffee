@@ -29,6 +29,6 @@ module.exports = (robot) ->
     res.send "ahahah"
 
   robot.hear /joke/i, (res) ->
-    res.robot.http("https://icanhazdadjoke.com/")
+    robot.http("https://icanhazdadjoke.com/")
     .get() (err, res, body) ->
-      res.send res
+      res.send {body}
