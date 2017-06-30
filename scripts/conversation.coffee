@@ -53,12 +53,12 @@ module.exports = (robot) ->
         data = JSON.parse body
         msg.send "#{data.joke}"
 
-  robot.respond /penses/i, (res) ->
-    res.send res.random choice
+  robot.respond /(.*) penses (.*)/i, (res) ->
+    res.reply res.random choice
 
   robot.listen(
     (message) ->
-      message.user.name is "valentincognito" and Math.random() > 0.8
+      message.user.name is "valentincognito" and Math.random() > 0.2
     (response) ->
-      response.reply "Tu parles beaucoup pour rien dire @valentincognito"
+      response.reply "Tu parles beaucoup pour rien dire..."
   )
