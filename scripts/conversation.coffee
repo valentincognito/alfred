@@ -56,9 +56,3 @@ module.exports = (robot) ->
   robot.respond /(.*) penses (.*)/i, (res) ->
     res.reply res.random choice
 
-  robot.listen(
-    (message) ->
-      message.user.name is "valentincognito" and Math.random() > 0.2
-    (response) ->
-      response.reply "Tu parles beaucoup pour rien dire..."
-  )
