@@ -28,10 +28,10 @@ module.exports = (robot) ->
   robot.hear /kkk/i, (res) ->
     res.send "ahahah"
 
-  robot.hear /joke/i, (res) ->
+  robot.hear /joke/i, (msg) ->
     robot.http("https://icanhazdadjoke.com/")
     .get() (err, res, body) ->
       if err
-        res.send "Desolé j\'ai eu un petit problème :( #{err}"
+        msg.send "Desolé j\'ai eu un petit problème :( #{err}"
         return
-      res.send "{body}"
+      msg.send "#{body}"
