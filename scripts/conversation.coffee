@@ -30,8 +30,10 @@ module.exports = (robot) ->
 
   robot.hear /joke/i, (msg) ->
     robot.http("https://icanhazdadjoke.com/")
-    .get() (err, res, body) ->
-      if err
-        msg.send "Desolé j\'ai eu un petit problème :( #{err}"
-        return
-      msg.send "#{body}"
+      .header('Accept', 'application/json')
+      .get() (err, res, body) ->
+        if err
+          msg.send "Desolé j\'ai eu un petit problème :( #{err}"
+          return
+        data = JSON.parse body
+        msg.send "#{data.joke}"
