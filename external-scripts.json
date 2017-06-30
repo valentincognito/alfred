@@ -7,6 +7,5 @@
   "hubot-maps",
   "hubot-rules",
   "hubot-shipit",
-  "hubot-heroku-keepalive",
-  "hubot-phrases"
+  "hubot-heroku-keepalive"
 ]
