@@ -1,16 +1,10 @@
 # Description:
-#   Example scripts for you to examine and try out.
+#   Scripts containing all the conversations
 #
-# Notes:
-#   They are commented out by default, because most of them are pretty silly and
-#   wouldn't be useful and amusing enough for day to day huboting.
-#   Uncomment the ones you want to try and experiment with.
-#
-#   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
 module.exports = (robot) ->
 
-  hay = ['Bien et vous ?', 'Je vous retourne la question.', 'Magnifique journée n'est-ce pas ?']
+  hay = ['Bien et vous ?', 'Je vous retourne la question.', 'Magnifique journee n'est-ce pas ?']
 
   robot.hear /kkk/i, (res) ->
     res.send "ahahah"
